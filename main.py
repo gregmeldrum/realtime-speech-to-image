@@ -67,18 +67,6 @@ def transcribe(chunk_length_s=5.0, stream_chunk_s=1.0):
     # prime the pipeline with a white background
     generate_image("white background")
 
-    # start the main loop
-    print("Start speaking...")
-
-    # select a theme
-    # theme = " renaissance oil painting style."
-    # theme = " anime style."
-    # theme = " line art style."
-    # theme = " bright watercolor style."
-    # theme = " closeup portrait photo, dramatic."
-    # theme = " minecraft block style."
-    # theme = " 3d, low-poly game art, polygon mesh, jagged, blocky."
-
     while True:
         mic = ffmpeg_microphone_live(
             sampling_rate=sampling_rate,
