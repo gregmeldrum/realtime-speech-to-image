@@ -1,4 +1,4 @@
-# Realtime text to image with theme selection
+# Realtime speech to image with theme selection
 
 ![Generated lion image](images/image.png)
 
