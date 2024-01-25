@@ -89,11 +89,14 @@ def transcribe(chunk_length_s=5.0, stream_chunk_s=1.0):
 import gradio as gr
 
 themes = [
+    "",
     " renaissance oil painting style.",
     " anime style.",
     " line art style.",
     " bright watercolor style.",
     " closeup portrait photo, dramatic.",
+    " retro comic book style.",
+    " soviet propaganda poster style.",
     " minecraft block style.",
     " 3d, low-poly game art, polygon mesh, jagged, blocky.",
 ]
