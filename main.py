@@ -20,6 +20,7 @@ print("Using device", device)
 
 model_id = "distil-whisper/distil-medium.en"
 
+# Set the default theme
 theme = " 3d, low-poly game art, polygon mesh, jagged, blocky."
 
 model = AutoModelForSpeechSeq2Seq.from_pretrained(
@@ -67,6 +68,7 @@ def transcribe(chunk_length_s=5.0, stream_chunk_s=1.0):
     # prime the pipeline with a white background
     generate_image("white background")
 
+    print("Start talking....")
     while True:
         mic = ffmpeg_microphone_live(
             sampling_rate=sampling_rate,
@@ -100,17 +102,17 @@ def theme_setter(new_theme):
     global theme
     theme = new_theme
 
-demo = gr.Interface(
-    theme_setter,
-    [
-        gr.Radio(themes, label="Theme", info="Prompt theme"),
+demo = gr.Interface(fn=theme_setter,
+    inputs=[
+        gr.Radio(choices=themes, value=" 3d, low-poly game art, polygon mesh, jagged, blocky.", label="Theme", info="Prompt theme"),
     ],
-    "text",
+    outputs=None,
     examples=[
-        ["minecraft block style"],
+        ["minecraft block style."],
     ]
 )
 
+# Start the transcriber in a thread
 image_thread = threading.Thread(target=transcribe, args=())
 image_thread.start()
 
