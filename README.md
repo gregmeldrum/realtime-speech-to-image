@@ -2,6 +2,9 @@
 
 ![Generated lion image](images/image.png)
 
+## Program flow
+![Program flow](images/flow.png)
+
 ## How to run
 
 ```
