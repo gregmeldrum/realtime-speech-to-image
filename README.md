@@ -8,8 +8,7 @@
 ## How to run
 
 ```
-pip install -r requirements.txt
-python main.py
+./run.sh
 ```
 
 Navigate to [http://127.0.0.1:7860](http://127.0.0.1:7860) to select the theme in realtime.
