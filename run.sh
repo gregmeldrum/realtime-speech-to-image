@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -eu
+cd "$(dirname $0)"
 
 if ! which ffmpeg > /dev/null ; then
   echo "Install ffmpeg first"
